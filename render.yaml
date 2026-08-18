@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: farepilot-live
+    runtime: docker
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /api/health
+    envVars:
+      - key: CACHE_TTL_SECONDS
+        value: "1200"
+      - key: SEARCHES_PER_15_MIN
+        value: "8"
